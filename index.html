@@ -1,0 +1,254 @@
+import React from "react";
+
+// Replace this with your real hosted image URL later
+const profilePhoto = "https://res.cloudinary.com/diotmqwqc/image/upload/v1775859811/Retrato_sorridente_com_fundo_tecnol%C3%B3gico_hxiahe.png";
+import { motion } from "framer-motion";
+import { Mail, Globe, Code2, Briefcase, Smartphone, Database, MessageCircle, ChevronRight } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
+const services = [
+  {
+    icon: <Globe className="w-6 h-6" />,
+    title: "Web Development",
+    description:
+      "Responsive, modern websites and web applications focused on performance, usability, and real business goals.",
+  },
+  {
+    icon: <Database className="w-6 h-6" />,
+    title: "Back-End & Systems",
+    description:
+      "Functional systems with structured logic, database integration, and scalable foundations for growing businesses.",
+  },
+  {
+    icon: <Smartphone className="w-6 h-6" />,
+    title: "Business Solutions",
+    description:
+      "Digital solutions for small companies, service operations, and internal process organization.",
+  },
+];
+
+const projects = [
+  {
+    title: "Corner Store Management System",
+    type: "Business System Concept",
+    description:
+      "A simple and intuitive software concept for small retail stores, including sales control, stock updates, low-stock alerts, returns, exchanges, and owner-level inventory adjustments.",
+    stack: "UI/UX, System Logic, Inventory Flow",
+  },
+  {
+    title: "Sales Dashboard",
+    type: "Data & Monitoring Interface",
+    description:
+      "A clean dashboard concept for tracking company income, expenses, work status, deadlines, and operational progress in one place.",
+    stack: "Dashboard Design, Admin Flow, Reporting",
+  },
+  {
+    title: "Professional Portfolio Website",
+    type: "Personal Brand Project",
+    description:
+      "A modern portfolio structure designed to present skills, services, and project value clearly for international freelance platforms.",
+    stack: "React, Responsive Design, UX Writing",
+  },
+];
+
+const strengths = [
+  "Software Engineer specialized in Software Development",
+  "Background in Information Technology",
+  "Experience in supervision and team leadership",
+  "Business-oriented mindset and digital project planning",
+  "Advanced English and Spanish for international communication",
+  "Focused on clean delivery, responsibility, and growth",
+];
+
+export default function RhanyelUpworkPortfolio() {
+  return (
+    <div className="min-h-screen bg-slate-950 text-slate-100">
+      <section className="relative overflow-hidden border-b border-white/10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.16),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(168,85,247,0.14),transparent_24%)]" />
+        <div className="relative max-w-7xl mx-auto px-6 py-20 lg:py-28">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="grid lg:grid-cols-2 gap-12 items-center"
+          >
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-200 mb-6">
+                <Code2 className="w-4 h-4" />
+                Available for freelance opportunities
+              </div>
+
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight text-white">
+                Rhanyel Victor Alves
+              </h1>
+
+              <p className="mt-4 text-xl md:text-2xl text-slate-300 font-medium">
+                Full Stack Developer • Technology Professional • Team Leader
+              </p>
+
+              <p className="mt-6 text-slate-400 text-base md:text-lg leading-8 max-w-2xl">
+                I build clean, functional, and business-focused digital solutions. With a background in Information Technology,
+                experience in supervision, and professional experience in Software Development Engineering, I combine technical
+                execution with strategic thinking to help projects move from idea to real value.
+              </p>
+
+              
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+            >
+              <div className="relative max-w-md mx-auto">
+                <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-cyan-400/20 to-violet-400/20 blur-2xl" />
+                <Card className="relative bg-white/5 border-white/10 rounded-[2rem] shadow-2xl backdrop-blur overflow-hidden">
+                  <CardContent className="p-0">
+                    <div className="aspect-[4/5] bg-slate-900">
+                      <img
+                        src={profilePhoto}
+                        alt="Rhanyel Victor Alves"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="p-6 border-t border-white/10">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-12 h-12 rounded-2xl bg-cyan-400/15 flex items-center justify-center text-cyan-300">
+                          <Briefcase className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <p className="text-sm text-slate-400">Professional Focus</p>
+                          <h3 className="text-xl font-semibold">Building useful digital solutions</h3>
+                        </div>
+                      </div>
+
+                      <div className="grid gap-3">
+                        {strengths.map((item) => (
+                          <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/60 px-4 py-3 text-slate-300 text-sm">
+                            {item}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-6 py-20">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="max-w-3xl"
+        >
+          <p className="text-cyan-300 font-medium mb-3">About Me</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">Technology, leadership, and execution.</h2>
+          <p className="mt-6 text-slate-400 leading-8 text-lg">
+            I am a results-driven professional with academic and practical experience in software, systems, and digital business
+            thinking. Beyond development, I also bring leadership experience from supervising teams and coordinating work,
+            which helps me understand deadlines, communication, responsibility, and the importance of delivering solutions that
+            actually serve the client’s objectives.
+          </p>
+        </motion.div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-6 pb-20">
+        <div className="flex items-end justify-between gap-6 mb-10 flex-wrap">
+          <div>
+            <p className="text-cyan-300 font-medium mb-3">Services</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">What I can help you build</h2>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {services.map((service) => (
+            <motion.div
+              key={service.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45 }}
+            >
+              <Card className="h-full rounded-3xl border-white/10 bg-white/5 hover:bg-white/[0.07] transition-colors shadow-xl">
+                <CardContent className="p-7">
+                  <div className="w-12 h-12 rounded-2xl bg-cyan-400/15 flex items-center justify-center text-cyan-300 mb-5">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-white">{service.title}</h3>
+                  <p className="text-slate-400 leading-7">{service.description}</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-6 pb-20">
+        <div className="mb-10">
+          <p className="text-cyan-300 font-medium mb-3">Projects</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">Portfolio highlights</h2>
+          <p className="mt-4 text-slate-400 max-w-3xl leading-8">
+            These projects represent my ability to structure solutions, think like a business problem-solver, and present work clearly.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-6">
+          {projects.map((project) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45 }}
+            >
+              <Card className="h-full rounded-3xl border-white/10 bg-slate-900/70 shadow-xl">
+                <CardContent className="p-7">
+                  <div className="text-sm text-cyan-300 mb-3">{project.type}</div>
+                  <h3 className="text-2xl font-semibold mb-4 text-white">{project.title}</h3>
+                  <p className="text-slate-400 leading-7 mb-6">{project.description}</p>
+                  <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-300">
+                    <span className="text-slate-500">Focus:</span> {project.stack}
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-6 pb-24">
+        <Card className="rounded-[2rem] border-white/10 bg-gradient-to-br from-cyan-500/10 to-violet-500/10 shadow-2xl overflow-hidden">
+          <CardContent className="p-8 md:p-12">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div>
+                <p className="text-cyan-300 font-medium mb-3">Contact</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-white">Let’s build something valuable.</h2>
+                <p className="mt-5 text-slate-300 leading-8 text-lg">
+                  I am open to freelance, remote, and international opportunities where I can contribute with development,
+                  structure, and problem-solving.
+                </p>
+              </div>
+
+              <div className="grid gap-4">
+                <div className="rounded-2xl border border-white/10 bg-slate-950/50 px-5 py-4 flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-cyan-300" />
+                  <span>rhanyelvoalves@gmail.com</span>
+                </div>
+                                <div className="rounded-2xl border border-white/10 bg-slate-950/50 px-5 py-4 flex items-center gap-3">
+                  <Globe className="w-5 h-5 text-cyan-300" />
+                  <span>Available for Upwork and remote client collaborations</span>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </section>
+    </div>
+  );
+}
